@@ -2,10 +2,12 @@
 
 Vzorčni repozitorij za projekt pri predmetu APPR v študijskem letu 2021/22. 
 
-## Delež zaposlenih v športu v odvisnosti od učinkovitosti na OI
+## Število potovanj na prebivalca v Evropi
+Primerjala bom število potovanj v odvisnosti od povprečne plače, BDP, št. prebivalcev, zaposlitve, povprečne starosti in stroške življenja...
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal.
+
 Tukaj boste napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+
 
 ## Program
 
