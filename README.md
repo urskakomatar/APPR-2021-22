@@ -3,7 +3,7 @@
 Vzorčni repozitorij za projekt pri predmetu APPR v študijskem letu 2021/22. 
 
 ## Število potovanj na prebivalca v Evropski uniji v odvisnosti od različnih dejavnikov
-Primerjala bom število potovanj na prebivalca v odvisnosti od povprečne plače, BDP-ja, brzposelnosti ter v odvisnosti od spola in starosti.
+Primerjala bom število potovanj na prebivalca v odvisnosti od povprečne plače, BDP-ja, brezposelnosti ter v odvisnosti od spola in starosti.
 
 časovna razsežnost je od leta 2009 (2012, odvisno od podatkov) do 2019, krajevna pa so članice EU (izjema so podatki z minimalno plačo, kjer niso zajete vse države).
 Za podatke sem vzela le potovanja iz osebnih razlogov in ne službenih.
