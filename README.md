@@ -21,8 +21,8 @@ Viri podatkov:
 Število prebivalcev(CSV):
 https://www.worldbank.org/en/home
 
-Povprečna letna plača(CSV):
-https://www.oecd.org
+minimalna letna plača(CSV):
+eurostat (lepša tabelica)
 
 Brezposelnost, število potovanj (skupaj,starost,spol), BDP (HTML):
 https://ec.europa.eu/eurostat/web/main/data/database
