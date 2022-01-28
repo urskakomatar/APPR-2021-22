@@ -1,5 +1,5 @@
 ---
-title: "Poročilo pri predmetu Analiza podatkov s programom R"
+title: "Število potovanj v Evropski uniji"
 author: "Urška Komatar"
 output:
   html_document: default
@@ -28,13 +28,62 @@ source("lib/libraries.r", encoding="UTF-8")
 source("uvoz/uvoz.r", encoding="UTF-8")
 ```
 
-***
+Podatke bom uvozila v obliki CSV in html.
+
+1. Tabela1: Indeks število potovanj na prebivalca po državah
+
+* `Država` - ime države
+* ``
+* ``
+
+2. Tabela2: Gosodarske značilnosti
+
+
+
+3. Tabela3: Demografske značilnosti
+
 
 ## Analiza in vizualizacija podatkov
 
 ```{r vizualizacija, results='hide'}
 source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 ```
+
+```{r g1, echo=FALSE, fig.align='center'}
+g1
+```
+Prvi graf nam predstavlja število potovanj prebivalcev Evropske unije glede na spol. Opazimo, da v zadnjih letih potuje vse več žensk in manj moških.
+
+```{r g2, echo=FALSE, fig.align='center'}
+g2
+```
+Drugi graf nam predstavlja, katera starostna skupina največ potuje (gledano na prebivalce EU-ja). Opazimo, da prevladujejo ljudje med 25 in 65 letom, kar je pričakovano, saj mlajši ljudje običajno nimajo zelo visokih prihodkov, starejši ljudje pa z leti vedno manj potujejo oz. običajno obiskujejo bližnje destinacije (v svoji državi).
+
+```{r g3, echo=FALSE, fig.align='center'}
+g3
+```
+Sedaj si oglejmo nekoliko zanimivejši graf. Vzeli smo povprečno število potovanj na osebo vsake države skozi leta 2012-2019. Opazimo, da so nad povprečjem predvsem države srednje Evrope in Skandinavije. Slovenija  je pod povprečjem, morda celo malo pod mojimi pričakovanji.Preseneti tudi Belgija, saj se mi zdi ena izmed bolj razvitih držav in bi jo pričakovala malo višje.
+
+```{r g4, echo=FALSE, fig.align='center'}
+g4
+```
+Četrti graf nam predstavlja odvisnost indeksa od bdp per capita in minimalne plače. Velikost krogca predstavlja število prebivalcev, barva pa velikost indeksa. Opazimo pričakovano premico odvisnosti bdppc in minimalne plače, hkrati pa opazimo, da višji kot je bdppc, svetlejši je indeks, torej več potujejo.
+
+
+
+```{r g5, echo=FALSE, fig.align='center'}
+g5
+```
+Peti graf predstavlja število potovanj v odvisnosti bdp per capita in brezposelnosti. Večji kot je krogec države, večji je potovalni indeks. Za večjo preglednost se imena prikažejo ob premikanju miške.
+
+
+
+
+```{r mapa1, echo=FALSE, fig.align='center'}
+print(mapa1)
+```
+Zemljevid Evrope glede števila potovanj.
+
 
 ***
 
