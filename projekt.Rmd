@@ -80,7 +80,7 @@ Peti graf predstavlja število potovanj v odvisnosti bdp per capita in brezposel
 
 
 ```{r mapa1, echo=FALSE, fig.align='center'}
-print(mapa1)
+mapa1
 ```
 Zemljevid Evrope glede števila potovanj.
 
