@@ -94,6 +94,7 @@ st_potovanj_graf <- function() {
 } 
 
 mapa1 <- st_potovanj_graf()
+tmap_mode("view")
 
 
 

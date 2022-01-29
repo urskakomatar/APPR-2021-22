@@ -63,8 +63,10 @@ St_potovanj_na_osebo <- oboje_skupaj %>%
   mutate(indeks = oboje_skupaj$st.potovanj/oboje_skupaj$število.prebivalcev)
 
 average_indeks <- aggregate(St_potovanj_na_osebo$indeks, by= list(Država=St_potovanj_na_osebo$Država), FUN = mean)
-
+#average_indeks <-add_row(Država = "Švedska", x = mean(St_potovanj_na_osebo[203:208,5]$x))
+#zakaj ne dela
 average_indeks <- average_indeks%>%add_row(Država = "EU", x = mean(average_indeks[!(average_indeks$Država == "Švedska"),]$x))
+
 ##########Drugi del: gospodarske značilnosti, BDP#########
 
 #########Minimalna mesečna plača v evrih##############EU kaj narediti mi je
