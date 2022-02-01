@@ -50,7 +50,7 @@ library(rgeos)
          x = x, y = x, color = skupina
        )
      ) +
-     geom_point() +
+     geom_point() + labs(x = "indeks", y = "indeks", title = sprintf("Razvrstitev držav v 2 skupini"))+
      geom_label(label = oznake, size = 2) +
      scale_color_hue() +
      theme_classic()
