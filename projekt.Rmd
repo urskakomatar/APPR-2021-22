@@ -20,11 +20,12 @@ source("lib/libraries.r", encoding="UTF-8")
 
 ## Izbira teme
 
-Predstavila bom, ali godpodarski dejavniki vplivajo na količino potovanja prebivalcev držav Evropske unije. Vzela bom le potovanja izven države, ki niso povezana z delom. To bom primerjala z bruto domačim proizvodom, minimalno plačo in povprečno plačo. Osredotočili se bomo tudi na demografske značilnosti, kot sta starost in spol. Za vzorec sem vzela leta od 2012 do 2019.
+Predstavila bom, ali godpodarski dejavniki vplivajo na količino potovanja prebivalcev držav Evropske unije. Vzela bom le potovanja izven države, ki niso povezana z delom. To bom primerjala z bruto domačim proizvodom, minimalno plačo in povprečno plačo. Osredotočila se bom tudi na demografske značilnosti, kot sta starost in spol. Za vzorec sem vzela leta od 2012 do 2019.
 
-podatke sem v obliki html in csv vzela iz naslednjih spletnih strani:
+Podatke sem v obliki html in csv vzela iz naslednjih spletnih strani:
 *[spletna stran eurostat](https://ec.europa.eu/eurostat/web/main/data/database) in
 *[spletna stran worldbank](https://www.worldbank.org/en/home)
+
 ***
 
 ## Obdelava, uvoz in čiščenje podatkov
