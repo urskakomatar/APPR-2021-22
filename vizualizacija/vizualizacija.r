@@ -46,18 +46,19 @@ g3 <- g3 + average_indeks%>%filter(Država == "Slovenija") %>% geom_bar(
 )
 
 #########min.plača, bdppc, št.preb. in velikost indeksa
-g4 <- Gospodarske_značilnosti[1:27,] %>%
+gosp.zn. <- Gospodarske_značilnosti
+colnames(gosp.zn.)[8] <- "št.prebivalcev"
+g4 <- gosp.zn.[1:27,] %>%
   ggplot(
     mapping = aes(x = vsota, y = bdppc)
   ) +
   geom_count(
-    aes(color = indeks,size = število.prebivalcev.y)
-  ) + theme(axis.text.x = element_text(angle = 60, hjust = 1))
-#g4 <- ggplotly(g4,tooltip = "Država")
+    aes(color = indeks,size = št.prebivalcev)
+  ) + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + labs(title=sprintf("Povezava z gospodarskimi značilnostmi"))
+g4 <- ggplotly(g4,tooltip = "št.prebivalcev")
 g4
 
 ####bdpcc, brezposelnost indeks in vse države
-
 g5 <- Gospodarske_značilnosti[1:27,] %>%
   ggplot(
     mapping = aes(x =bdppc ,y =indeks.bp,  size = indeks , color = Država)

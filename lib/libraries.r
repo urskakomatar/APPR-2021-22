@@ -16,7 +16,11 @@ library(tmap)
 library(plotly)
 library(sf)
 library(ggalt)
-
+library(cluster)
+library(sp)
+library(rgdal)
+library(raster) 
+library(rgeos)
 options(gsubfn.engine="R")
 
 # Uvozimo funkcije za pobiranje in uvoz zemljevida.

@@ -7,12 +7,12 @@ shinyUI(fluidPage(
                   selectInput(
                     "starost.preb",
                     label = "Starost:",
-                    choices = c("+65","15-24"),
+                    choices = c("15-24","25-44","45-65","+65"),
                     selected = "15-24"
                   ),
                   selectInput(
                     "drzava",
-                    label = "država:",
+                    label = "Država:",
                     choices = average_indeks$Država,
                     selected = "Slovenija"
                   ))

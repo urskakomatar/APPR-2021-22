@@ -40,7 +40,7 @@ st_potovanj <- data.frame(lapply(st_potovanj, function(x) {gsub(",", "", x)}))
 st_potovanj$st.potovanj <- as.numeric(st_potovanj$st.potovanj)
 #število prebivalcev# še za EU
 st_prebivalcev <- read.csv("podatki/st_prebivalcev_eu.csv")
-st_prebivalcev <- st_prebivalcev %>% select(Država = Country.Name, "2012" = "X2012..YR2012.", "2013" = "X2013..YR2013.",
+st_prebivalcev <- st_prebivalcev %>% dplyr::select(Država = Country.Name, "2012" = "X2012..YR2012.", "2013" = "X2013..YR2013.",
 "2014" = "X2014..YR2014.", "2015" = "X2015..YR2015.", "2016" = "X2016..YR2016.", "2017" = "X2017..YR2017.",
 "2018" = "X2018..YR2018.", "2019" = "X2019..YR2019.")
 
@@ -71,7 +71,7 @@ average_indeks <- average_indeks%>%add_row(Država = "EU", x = mean(average_inde
 
 #########Minimalna mesečna plača v evrih##############EU kaj narediti mi je
 mesecna_placa <- read.csv("podatki/earn_mw_cur_1_Data.csv")
-mesecna_placa <- mesecna_placa %>% select(Država = GEO, leto = TIME, vsota = Value)
+mesecna_placa <- mesecna_placa %>% dplyr::select(Država = GEO, leto = TIME, vsota = Value)
 
 match(mesecna_placa$Država, poimenovanje_drzav$drzava_anglesko)
 mesecna_placa$Država = unlist(poimenovanje_drzav[match(mesecna_placa$Država, poimenovanje_drzav$drzava_anglesko), "drzave"])
@@ -88,7 +88,7 @@ mesecna_placa$vsota <- as.numeric(mesecna_placa$vsota)
 brezposelnost <- readHTMLTable("podatki/brezposelnostEU_v_tisoč.html")
 brezposelnost <- brezposelnost[["NULL"]]
 
-brezposelnost <- brezposelnost %>% select(Država = TIMEGEO, "2012" = "2012Q1", "2013" = "2013Q1",
+brezposelnost <- brezposelnost %>% dplyr::select(Država = TIMEGEO, "2012" = "2012Q1", "2013" = "2013Q1",
                                           "2014" = "2014Q1", "2015" = "2015Q1",
                                           "2016" = "2016Q1", "2017" = "2017Q1", "2018" = "2018Q1", "2019" = "2019Q1")
 match(st_potovanj$Država, poimenovanje_drzav$drzava_anglesko)
@@ -113,14 +113,14 @@ brezposelnost$brezposelnost.v.1000 <- as.numeric(brezposelnost$brezposelnost.v.1
 združenje_za_indeks <- brezposelnost %>%
   left_join(st_prebivalcev, by = c("leto", "Država"))
 indeks.bp <- združenje_za_indeks %>% mutate(indeks.bp = združenje_za_indeks$brezposelnost.v.1000 * 1000 /združenje_za_indeks$število.prebivalcev)%>%
-  select(Država,leto,indeks.bp)
+  dplyr::select(Država,leto,indeks.bp)
 
 ##########BDP############ kljukca
 
 bdp <- readHTMLTable("podatki/bdpEU_mio.html")
 bdp <- bdp[["NULL"]]
 
-bdp <- bdp %>% select(Država = TIMEGEO, "2012" = "2012Q1", "2013" = "2013Q1",
+bdp <- bdp %>% dplyr::select(Država = TIMEGEO, "2012" = "2012Q1", "2013" = "2013Q1",
                                       "2014" = "2014Q1", "2015" = "2015Q1",
                       "2016" = "2016Q1", "2017" = "2017Q1", "2018" = "2018Q1", "2019" = "2019Q1")
 
@@ -244,3 +244,9 @@ EU_Spol <- EU_Spol[order(EU_Spol$spol),]
 EU_Spol$spol <- as.factor(EU_Spol$spol)
 EU_Spol$stevilo <- as.numeric(EU_Spol$stevilo)
 
+###Lepe in pregledne tabele:
+Tabela1 <- St_potovanj_na_osebo
+Tabela2 <- Gospodarske_značilnosti %>% dplyr::select(Država,leto,vsota,bdppc,indeks.bp,indeks)
+colnames(Tabela2)[3] <- "min.placa"
+Tabela3 <- Starost
+Tabela4 <-  Spol
